@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Karlito's Kapehan sa Gabi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css.css" />
+
+    <!-- Minimal modal styles -->
+    <style>
+      .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 9999; }
+      .modal.is-open { display: flex; }
+      .modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+      .modal-panel { position: relative; background: #fff; padding: 20px; border-radius: 8px; width: 90%; max-width: 480px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 1000; }
+      .modal-close { position: absolute; right: 10px; top: 10px; background: transparent; border: none; font-size: 18px; cursor: pointer; }
+      .modal-form .form-row { margin-bottom: 10px; }
+      .modal-form input, .modal-form textarea, .modal-form select { width: 100%; padding: 8px; box-sizing: border-box; }
+      .modal-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:12px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="#home" class="nav-logo">
+          <h2 class="logo-text">Karlito's Kapehan sa Gabi</h2>
+        </a>
+
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times" aria-label="Close menu"></button>
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button id="menu-open-button" class="fas fa-bars" aria-label="Open menu" aria-expanded="false"></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section" id="home" data-title="Home">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Best Coffee</h2>
+            <h3 class="subtitle">A Coffee a Day Keeps the Problems Away!</h3>
+            <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy.</p>
+            <div class="buttons">
+              <a href="#" class="button order-now">Order Now</a>
+              <a href="#contact" class="button contact-us">Contact Us</a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img src="pic1.png" alt="Coffee" class="hero-image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" data-title="About">
+        <div class="section-content">
+          <div class="about-image-wrapper">
+            <img src="pic2.avif" alt="About" class="about-image" />
+          </div>
+          <div class="about-details">
+            <h2 class="section-title">About Us</h2>
+            <p class="text">Welcome to Karlito's Kapehan sa Gabi, your go-to spot for relaxation and good vibes in Brgy. Marinig, Cabuyao City. Nestled in the heart of Celestine Homes, we offer a cozy and laid-back atmosphere where you can unwind after a long day or catch up with friends over a delicious cup of coffee.
+
+We’re open every evening from 5:00 PM to 2:00 AM, serving up a variety of expertly crafted coffees, teas, and tasty treats. Whether you're here to take a break, get some work done, or simply enjoy a peaceful moment, Karlito's Kapehan sa Gabi is the perfect place to do just that.
+
+Come for the coffee, stay for the comfort. We look forward to making your evenings a little bit brighter and a lot more relaxing.</p>
+
+            <div class="social-link-list">
+              <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+
+            <div class="mission-vision" aria-labelledby="mv-heading">
+              <h3 id="mv-heading">Our Mission & Vision</h3>
+
+              <div class="mv-cards">
+                <div class="mv-card">
+                  <h4>Mission</h4>
+                  <p>
+                    To serve high-quality, affordable beverages and food in a warm, welcoming evening space that brings the community together, delivered with friendly service and consistent craftsmanship.
+                  </p>
+                </div>
+
+                <div class="mv-card">
+                  <h4>Vision</h4>
+                  <p>
+                    To be the neighborhood’s favorite late‑night coffee destination. A cozy, sustainable, and inspiring place where people connect, create, and relax.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu" data-title="Menu">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="section-content">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <img src="pic4.jpeg" alt="Hot Beverages" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Hot Beverages</h3>
+                <ul class="items-list">
+                  <li>Espresso</li>
+                  <li>Americano</li>
+                  <li>Cappuccino</li>
+                  <li>Latte</li>
+                  <li>Mocha</li>
+                  <li>Hot Chocolate</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <img src="pic5.jpg" alt="Cold Beverages" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Cold Beverages</h3>
+                <ul class="items-list">
+                  <li>Iced Americano</li>
+                  <li>Iced Latte</li>
+                  <li>Cold Brew</li>
+                  <li>Frappé</li>
+                  <li>Iced Mocha</li>
+                  <li>Iced Tea</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <img src="pic6.jpg" alt="Refreshments" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Refreshments</h3>
+                <ul class="items-list">
+                  <li>Fruit Smoothie</li>
+                  <li>Lemonade</li>
+                  <li>Iced Fruit Punch</li>
+                  <li>Sparkling Water</li>
+                  <li>Milkshake</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <img src="pic7.jpeg" alt="Special Combos" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Special Combos</h3>
+                <ul class="items-list">
+                  <li>Espresso + Croissant</li>
+                  <li>Latte + Pancakes</li>
+                  <li>Cold Brew + Sandwich</li>
+                  <li>Frappé + Cookie</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <img src="pic8.jpg" alt="Dessert" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Dessert</h3>
+                <ul class="items-list">
+                  <li>Cheesecake</li>
+                  <li>Brownie</li>
+                  <li>Banana Bread</li>
+                  <li>Caramel Panna Cotta</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <img src="pic9.jpg" alt="Burger & Fries" class="menu-image" />
+              <div class="menu-details">
+                <h3 class="name">Burger & Fries</h3>
+                <ul class="items-list">
+                  <li>Classic Beef Burger</li>
+                  <li>Chicken Burger</li>
+                  <li>Veggie Burger</li>
+                  <li>French Fries (Regular / Large)</li>
+                  <li>Onion Rings</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery" data-title="Gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="section-content">
+          <ul class="gallery-list">
+            <li class="gallery-item"><img src="gallery1.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+            <li class="gallery-item"><img src="gallery2.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+            <li class="gallery-item"><img src="gallery3.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+            <li class="gallery-item"><img src="gallery4.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+            <li class="gallery-item"><img src="gallery5.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+            <li class="gallery-item"><img src="gallery6.jpeg" alt="Gallery Image" class="gallery-image" /></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" data-title="Contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-content">
+          <ul class="contact-info-list">
+            <li class="contact-info"><i class="fa-solid fa-location-crosshairs"></i><p>Celestine Homes Brgy. Marinig Cabuyao City</p></li>
+            <li class="contact-info"><i class="fa-regular fa-envelope"></i><p>carlmanuelg@gmail.com</p></li>
+            <li class="contact-info"><i class="fa-solid fa-phone"></i><p>09282983940</p></li>
+            <li class="contact-info"><i class="fa-regular fa-clock"></i><p>Monday - Friday: 5:00 PM - 2:00 AM</p></li>
+          </ul>
+
+          <form action="#" class="contact-form">
+            <input type="text" placeholder="Your name" class="form-input" required />
+            <input type="email" placeholder="Your email" class="form-input" required />
+            <textarea placeholder="Your message" class="form-input" required></textarea>
+            <button type="submit" class="button submit-button">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer-section">
+        <div class="section-content">
+          <p class="copyright-text">© 2024 Karlito's kapehan sa Gabi</p>
+          <div class="social-link-list">
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="policy-text">
+            <a href="#" class="policy-link">Privacy policy</a>
+            <span class="separator">•</span>
+            <a href="#" class="policy-link">Refund policy</a>
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Order modal (HTML only) -->
+    <div class="modal" id="order-modal" aria-hidden="true" role="dialog" aria-labelledby="order-modal-title">
+      <div class="modal-overlay" data-close="true"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" aria-label="Close order form">&times;</button>
+        <h2 id="order-modal-title">Place your order</h2>
+
+        <form id="order-form" class="modal-form" action="#" novalidate>
+          <div class="form-row">
+            <label class="sr-only">Name</label>
+            <input name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label class="sr-only">Email</label>
+            <input name="email" type="email" placeholder="Your email" required />
+          </div>
+
+          <div class="form-row">
+            <label class="sr-only">Item</label>
+            <select name="item" required>
+              <option value="">Choose item</option>
+              <option>Espresso</option>
+              <option>Americano</option>
+              <option>Cappuccino</option>
+              <option>Latte</option>
+              <option>Cold Brew</option>
+              <option>Frappé</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <input name="quantity" type="number" min="1" value="1" />
+          </div>
+
+          <div class="form-row">
+            <textarea name="notes" placeholder="Notes (optional)"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="button modal-cancel">Cancel</button>
+            <button type="submit" class="button submit-button">Send order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
